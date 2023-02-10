@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Acerte o Alvo!</title>
+
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <h1>Jogo - Acerte o Alvo!</h1>
+        <br>
+        <h2>O objetivo desse jogo é acertar o centro do alvo o maior número de vezes em 50 (cinquenta) tentativas. Apontar!!!</h2>
+        <br>
+    </body>
+
+</html>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var raio = 10;
+    var xAleatorio;
+    var yAleatorio;
+    var pontos = 0;
+    var tentativas = 0;
+
+    function desenhaCirculo(x, y, raio, cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+   }
+
+    function limpaTela() {
+    pincel.clearRect(0, 0, 600, 400);
+    }
+
+    function desenhaAlvo(x, y) {
+    desenhaCirculo(x, y, raio+20, 'red');
+    desenhaCirculo(x, y, raio+10, 'white');
+    desenhaCirculo(x, y, raio, 'red');
+    }
+
+    function sorteiaPosicao(maximo) {
+        return Math.floor(Math.random() * maximo);
+    }
+
+    function atualizaTela() {
+        limpaTela();
+        xAleatorio = sorteiaPosicao(600);
+        yAleatorio = sorteiaPosicao(400);
+        desenhaAlvo(xAleatorio, yAleatorio);
+        tentativas++;
+        if (tentativas >= 50) {
+            clearInterval(intervalo);
+            limpaTela();
+            alert('Suas tentativas acabaram! Vocês acertou o alvo ' + pontos + ' vez(es).');
+        }
+    }
+
+    function resultadoTentativa(evento) {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+        if(x > (xAleatorio - raio) 
+                && x < (xAleatorio + raio)
+                && y > (yAleatorio - raio)
+                && y < (yAleatorio + raio)) {
+            alert('Acertou! Parabéns!')
+            pontos = pontos + 1;
+
+        }
+    }
+
+    var intervalo = setInterval(atualizaTela, 1000);
+   
+    tela.onclick = resultadoTentativa;
+
+</script>
+
+
+<html>
+    <br>
+    <h3>Adaptação de programa realizado durante o ONE por Felipe Machado.</h3>
+</html>

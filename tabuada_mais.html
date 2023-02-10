@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+		document.write('<br><hr>');
+	}
+
+	function mostra(frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+	var tabuada = prompt('Digite o número que deseja calcular a tabuada (s para sair):');
+
+	while(tabuada != 's') {
+		tabuada = parseInt(tabuada)
+		mostra('Tabuada de ' + tabuada + '<br>');
+		for(var multiplicador = 1; multiplicador <= 10; multiplicador++) {
+			mostra(tabuada + ' x ' + multiplicador + ' = ' + tabuada*multiplicador);
+		}
+		tabuada = prompt('Digite o número que deseja calcular a tabuada (s para sair):');		
+	}
+
+	mostra('Fim!');
+
+</script>

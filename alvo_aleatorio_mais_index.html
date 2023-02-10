@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Jogo - Acerte o Alvo!</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto&family=Roboto+Serif:opsz@8..144&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    </head>
+
+    <section class="titulo">
+        <h1>Jogo - Acerte o Alvo!</h1>
+    </section>
+
+    <section class="legenda">
+        <h2>O objetivo desse jogo é acertar o centro do alvo o maior número de vezes em 20 (vinte) tentativas. Apontar!!!</h2>
+    </section>
+
+    <section class="botoes">
+        <button class="facil" onclick="facil()">Fácil</button>
+        <button class="medio" onclick="medio()">Médio</button>
+        <button class="dificil" onclick="dificil()">Difícil</button>
+        <button class="reiniciar" onclick="reiniciar()">Reiniciar</button>        
+    </section>
+
+
+    <canvas width="800" height="500"></canvas>
+
+    <h3 class="rodape">&copy; Felipe do Nascimento - Adaptação de exercício ONE</h3>
+
+    <script src = "alvo_aleatorio_mais_script.js"></script>
+    
+</html>

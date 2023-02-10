@@ -1,0 +1,68 @@
+html {
+	background: #E5E5E5;
+	font-family: 'Roboto Serif', serif;
+}
+
+.titulo {
+	position: relative;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.legenda {
+	position: relative;
+	width: 800px;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.botoes {
+	display: all;
+	text-align: center;
+	margin-top: 1%;
+}
+
+.facil,.medio,.dificil,.reiniciar {
+	background: #D3D3D3;
+	font-size: 14px;
+	font-weight: bold;
+	width: 80px;
+	height: 25px;
+	border: 1px solid black;
+	border-radius: 12px;
+	cursor: pointer;
+}
+
+canvas {
+	background: white;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    display: block;
+    width: 800px;
+    height: 500px;
+}
+
+.rodape {
+	position: relative;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+	align-items: center;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+}
